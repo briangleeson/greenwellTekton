@@ -24,6 +24,11 @@ spec:
       description: Name property
     - name: country
       description: Country property
+    - name: test
+      description: Test property
+    - name: custom
+      description: Custom property
+      default: --none--
   resourcetemplates:
     - apiVersion: tekton.dev/v1alpha1
       kind: PipelineRun
