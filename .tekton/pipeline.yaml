@@ -15,7 +15,7 @@ spec:
       default: TEST
     - name: custom
       description: Simple custom property
-      default: CUSTOM  
+      default: -none-  
   tasks:
     - name: echo-task
       taskRef:
