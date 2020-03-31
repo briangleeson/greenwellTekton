@@ -25,7 +25,7 @@ spec:
       args:
         - echo "Tekton Properties Test Run";
           echo "==========================";
-          echo "name prop = $NAME;
+          echo "name prop = $NAME";
           echo "country prop = $COUNTRY";
           echo "test prop = $TEST";
           echo "=========================="
