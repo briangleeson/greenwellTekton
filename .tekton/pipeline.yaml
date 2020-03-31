@@ -12,7 +12,10 @@ spec:
       default: COUNTRY
     - name: test
       description: Simple test property
-      default: TEST  
+      default: TEST
+    - name: custom
+      description: Simple custom property
+      default: CUSTOM  
   tasks:
     - name: echo-task
       taskRef:
@@ -24,3 +27,5 @@ spec:
           value: $(params.country)
         - name: test
           value: $(params.test)  
+        - name: custom
+          value: $(params.custom) 
