@@ -4,23 +4,23 @@ metadata:
   name: echo-props-pipeline
 spec:
   params:
-    - name: quote
-      description: simple quoted property
-      default: TESTQUOTE
-    - name: noquote
-      description: simple unquoted property
-      default: TESTNOQUOTE
-    - name: environment_value
-      description: A value from the pipeline level, trigger level or run level
-      default: BLOOPER  
+    - name: name
+      description: simple name property
+      default: NAME
+    - name: country
+      description: simple country property
+      default: COUNTRY
+    - name: test
+      description: Simple test property
+      default: TEST  
   tasks:
     - name: echo-task
       taskRef:
         name: echo-props
       params:
-        - name: quote
-          value: $(params.quote)
-        - name: noquote
-          value: $(params.noquote)
-        - name: environment_value
-          value: $(params.environment_value)  
+        - name: name
+          value: $(params.name)
+        - name: country
+          value: $(params.country)
+        - name: test
+          value: $(params.test)  
