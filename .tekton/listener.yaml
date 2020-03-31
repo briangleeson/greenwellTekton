@@ -41,4 +41,6 @@ spec:
           - name: country
             value: $(params.country)
           - name: test
-            value: $(params.test)  
+            value: $(params.test)
+          - name: custom
+            value: $(params.custom)
