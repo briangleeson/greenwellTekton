@@ -5,27 +5,27 @@ metadata:
 spec:
   inputs:
     params:
-      - name: quote
-        description: Simple quoted property
-      - name: noquote
-        description: Simple un-quoted property
-      - name: environment_value
-        description: Value from pipeline, trigger, or run property    
+      - name: name
+        description: Simple text property for name
+      - name: country
+        description: Simple text property for country
+      - name: test
+        description: Simple text property for test
   steps:
     - name: show-props
       image: ubuntu
       env:
-        - name: QUOTE
-          value: $(inputs.params.quote)
-        - name: NOQUOTE
-          value: $(inputs.params.noquote)
-        - name: ENVIRONMENT_VALUE
-          value: $(inputs.params.environment_value)    
+        - name: NAME
+          value: $(inputs.params.name)
+        - name: COUNTRY
+          value: $(inputs.params.country)
+        - name: TEST
+          value: $(inputs.params.test)    
       command: ["/bin/bash", "-c"]
       args:
-        - echo "This is what I can see man";
-          echo $QUOTE;
-          echo $NOQUOTE;
-          echo "This is what I was sent";
-          echo $ENVIRONMENT_VALUE;
-          echo "Nothing else to see here"
+        - echo "Tekton Properties Test Run";
+          echo "==========================";
+          echo "name prop = $NAME;
+          echo "country prop = $COUNTRY";
+          echo "test prop = $TEST";
+          echo "=========================="
