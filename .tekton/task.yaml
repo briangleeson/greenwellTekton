@@ -1,30 +1,29 @@
-apiVersion: tekton.dev/v1alpha1
+apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
   name: echo-props
 spec:
-  inputs:
-    params:
-      - name: name
-        description: Simple text property for name
-      - name: country
-        description: Simple text property for country
-      - name: test
-        description: Simple text property for test
-      - name: custom
-        description: Simple text property for custom
+  params:
+    - name: name
+      description: Simple text property for name
+    - name: country
+      description: Simple text property for country
+    - name: test
+      description: Simple text property for test
+    - name: custom
+      description: Simple text property for custom
   steps:
     - name: show-props
       image: ubuntu
       env:
         - name: NAME
-          value: $(inputs.params.name)
+          value: $(params.name)
         - name: COUNTRY
-          value: $(inputs.params.country)
+          value: $(params.country)
         - name: TEST
-          value: $(inputs.params.test)   
+          value: $(params.test)   
         - name: CUSTOM
-          value: $(inputs.params.custom)  
+          value: $(params.custom)  
       command: ["/bin/bash", "-c"]
       args:
         - echo "Tekton Properties Test Run";
