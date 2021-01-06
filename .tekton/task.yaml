@@ -27,7 +27,7 @@ spec:
       command: ["/bin/bash", "-c"]
       args:
         - echo "Tekton Properties Test Run";
-          sleep 600;
+          sleep 60;
           echo "==========================";
           echo "name prop = $NAME";
           echo "country prop = $COUNTRY";
